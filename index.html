@@ -311,8 +311,66 @@ body.page-fit-portrait .invite {
   font-size:clamp(24px, 6vw, 32px); line-height:1.05; font-weight:900;
 }
 @media (max-width:699px) {
-  #page4 .event-details { top: 9% !important; gap: clamp(12px, 2.4vh, 20px) !important; }
+  #page4 .event-details { top: 9% !important; width:64% !important; max-height:82% !important; padding:6% 4.5% !important; gap: clamp(12px, 2.4vh, 20px) !important; }
   #page4 .event-greeting { font-size:clamp(25px, 6.2vw, 33px); }
+}
+
+
+/* Corrección final solicitada:
+   - Mantener la portada y todas las páginas en proporción vertical 2:3 para que no se estiren.
+   - Hacer la tarjeta de datos más angosta y más larga, a la izquierda, para dejar visibles las guerreras. */
+@media (max-width: 699px) {
+  html, body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+  body {
+    align-items: center !important;
+    justify-content: center !important;
+    background: #17002e;
+  }
+  .invite {
+    width: min(100vw, 66.6667dvh) !important;
+    height: min(150vw, 100dvh) !important;
+    min-height: 0 !important;
+    aspect-ratio: 2 / 3 !important;
+    flex: 0 0 auto !important;
+  }
+  .art {
+    width: 100%;
+    height: 100%;
+    object-fit: fill !important;
+  }
+
+  #page4 .event-details {
+    left: 2.5% !important;
+    top: 8.5% !important;
+    width: 52% !important;
+    min-height: 68% !important;
+    max-height: 79% !important;
+    gap: clamp(10px, 2vh, 17px) !important;
+    padding: 4.5% 4% !important;
+    justify-content: space-between !important;
+    overflow: hidden;
+  }
+  #page4 .event-greeting {
+    font-size: clamp(23px, 5.8vw, 30px) !important;
+    line-height: 1.04 !important;
+  }
+  #page4 .event-label {
+    font-size: clamp(20px, 5.1vw, 27px) !important;
+    line-height: 1.06 !important;
+  }
+  #page4 .event-value,
+  #page4 .location-link {
+    font-size: clamp(16px, 4.0vw, 21px) !important;
+    line-height: 1.18 !important;
+  }
+  #page4 .event-line {
+    gap: 4px !important;
+  }
 }
 
 </style></head><body><main class="invite" aria-label="Invitación interactiva de cumpleaños">
